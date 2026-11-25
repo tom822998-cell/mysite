@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+:root {
+  --green: #347a43;
+  --deep-green: #294b2d;
+  --soft-green: #edf4e9;
+  --ink: #29352a;
+  --muted: #667267;
+  --paper: #fff;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Noto Sans JP", "Yu Gothic", "Meiryo", sans-serif;
+  line-height: 1.85;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; width: 100%; object-fit: cover; }
+.site-header {
+  min-height: 76px;
+  padding: 12px max(5vw, calc((100% - 1280px) / 2));
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; background: rgba(255,255,255,.97);
+  position: relative; z-index: 2;
+}
+.logo { display: inline-flex; align-items: center; gap: 10px; font-size: 25px; font-weight: 800; color: var(--deep-green); white-space: nowrap; }
+.logo-leaf, .leaf-mark { color: #5a9a45; font-size: 31px; line-height: 1; }
+.main-nav { display: flex; align-items: center; gap: clamp(12px, 2.3vw, 34px); font-size: 14px; font-weight: 700; }
+.main-nav a { padding: 7px 12px; border-radius: 30px; transition: .2s; }
+.main-nav a:hover, .main-nav .active { color: white; background: var(--green); }
+.hero {
+  min-height: 430px; position: relative; display: flex; align-items: center;
+  background: url("../images/hero-plants.jpg") center 52% / cover no-repeat;
+}
+.hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,255,255,.91) 0%, rgba(255,255,255,.73) 35%, rgba(255,255,255,0) 70%); }
+.hero-content { position: relative; width: min(1180px, 90%); margin: 0 auto; padding: 52px 0; }
+.eyebrow { color: var(--green); font-size: 11px; letter-spacing: .2em; font-weight: 800; }
+.hero h1 { margin: 8px 0 12px; font-size: clamp(38px, 5vw, 62px); line-height: 1.28; letter-spacing: .04em; color: #2e3b2e; }
+.hero h1 em { color: var(--green); font-style: normal; }
+.hero-copy { font-size: 18px; margin: 12px 0 22px; }
+.button, .outline-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 14px;
+  padding: 10px 24px; border-radius: 28px; font-weight: 700; font-size: 14px;
+  transition: transform .2s, background .2s;
+}
+.button { color: white; background: var(--green); }
+.button:hover { background: var(--deep-green); transform: translateY(-2px); }
+.button span, .outline-button span { font-size: 22px; line-height: 1; }
+.page-wrap { width: min(1180px, 90%); margin: 0 auto; }
+.section { padding: 42px 0 20px; }
+.intro { display: grid; grid-template-columns: 1.65fr 1fr; gap: 38px; align-items: center; }
+h2 { margin: 0 0 18px; font-size: 25px; color: var(--deep-green); }
+h2 .leaf-mark, h3 .leaf-mark { margin-right: 8px; }
+.intro-content { display: grid; grid-template-columns: 1fr 1.15fr; gap: 25px; align-items: center; }
+.intro-content img { height: 210px; border-radius: 12px; }
+.intro-content p { margin: 0 0 10px; }
+.intro-content .button { margin-top: 10px; }
+.recommend-card { background: var(--soft-green); border-radius: 14px; padding: 22px; }
+.recommend-card h3 { margin: 0 0 14px; color: var(--deep-green); font-size: 19px; }
+.recommend-content { display: grid; grid-template-columns: .9fr 1fr; gap: 17px; align-items: center; }
+.recommend-content img { height: 180px; border-radius: 10px; }
+.recommend-content h4 { font-size: 20px; margin: 0 0 8px; }
+.recommend-content p { margin: 0 0 12px; font-size: 14px; }
+.outline-button { border: 1px solid var(--green); color: var(--green); background: white; padding: 7px 17px; }
+.outline-button:hover { background: var(--green); color: white; }
+.care-section { padding-top: 55px; }
+.section-lead { margin: -10px 0 22px; color: var(--muted); }
+.tips-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.tip-card { overflow: hidden; border: 1px solid #e7ece4; border-radius: 13px; background: white; }
+.tip-card img { height: 175px; }
+.tip-card div { padding: 14px 17px 18px; }
+.tip-card h3 { margin: 0 0 5px; color: var(--deep-green); font-size: 18px; }
+.tip-card p { margin: 0; color: var(--muted); font-size: 14px; }
+.gallery { padding-top: 48px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.gallery-grid img { height: 190px; border-radius: 12px; }
+.contact { margin: 48px 0; padding: 25px 30px; background: var(--soft-green); border-radius: 15px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.contact h2 { margin-bottom: 3px; font-size: 21px; }
+.contact p { margin: 0; color: var(--muted); }
+.site-footer { padding: 25px 5%; background: #f6f8f3; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.footer-logo { font-size: 20px; }
+.site-footer p { margin: 0; color: var(--muted); font-size: 12px; }
+
+@media (max-width: 850px) {
+  .site-header { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .main-nav { width: 100%; overflow-x: auto; padding-bottom: 4px; white-space: nowrap; }
+  .intro { grid-template-columns: 1fr; }
+  .recommend-content { grid-template-columns: 180px 1fr; }
+}
+@media (max-width: 600px) {
+  .hero { min-height: 420px; background-position: 58% center; }
+  .hero-shade { background: linear-gradient(90deg, rgba(255,255,255,.9), rgba(255,255,255,.55)); }
+  .hero-content { width: 88%; }
+  .hero h1 { font-size: 39px; }
+  .intro-content { grid-template-columns: 1fr; }
+  .intro-content img { height: 210px; }
+  .recommend-content { grid-template-columns: 1fr; }
+  .recommend-content img { height: 190px; }
+  .tips-grid, .gallery-grid { grid-template-columns: 1fr; }
+  .tip-card img, .gallery-grid img { height: 210px; }
+  .contact, .site-footer { flex-direction: column; align-items: flex-start; }
+  .contact { padding: 22px; }
+}
